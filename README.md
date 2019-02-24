@@ -13,6 +13,9 @@ docker run -it -v $(pwd):/home/unit-testing-workshop unit-testing-workshop
 # configure local venv on host
 bin/configure_venv_locally.sh
 # Configure your IDE to know where the python interpreter is
+
+# run tests
+python -m unittest -s discover src/
 ```
 
 
