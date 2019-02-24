@@ -1,0 +1,9 @@
+# virtual environment
+.venv-local
+
+# IDE config
+.vscode
+.idea
+
+# pycache
+**/__pycache__
