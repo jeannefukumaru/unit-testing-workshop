@@ -8,7 +8,10 @@
 docker build . -t unit-testing-workshop
 
 # start docker container
-docker run -it -v $(pwd):/home/unit-testing-workshop unit-testing-workshop 
+docker run -it -v $(pwd):/code unit-testing-workshop 
+
+# add some color to your terminal
+source bin/color_my_terminal.sh
 
 # configure local venv on host
 bin/configure_venv_locally.sh

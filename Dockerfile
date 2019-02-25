@@ -5,11 +5,13 @@ RUN apt-get update \
 
 RUN git config --global credential.helper 'cache --timeout=36000'
 
-WORKDIR /home/unit-testing-workshop
+WORKDIR /code
 
-COPY requirements.txt /home/unit-testing-workshop/requirements.txt
+COPY requirements.txt /code/requirements.txt
 RUN pip install -r requirements.txt
 
-COPY . /home/unit-testing-workshop
+ARG user
+RUN useradd ${user:-root} -g root || true
+USER ${user:-root}
 
 CMD ["bash"]
