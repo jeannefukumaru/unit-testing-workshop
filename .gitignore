@@ -7,6 +7,7 @@
 
 # pycache
 **/__pycache__
+**/*ipynb_checkpoints
 
 # miscellaneous
 .DS_Store/

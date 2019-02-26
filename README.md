@@ -3,13 +3,17 @@
 
 ### Setup
 
+Build docker and start container
 ```shell
 # build docker image
 docker build . -t unit-testing-workshop
 
 # start docker container
-docker run -it -v $(pwd):/code unit-testing-workshop 
+docker run -it -v $(pwd):/code -p 8888:8888 unit-testing-workshop
+```
 
+Commands to be run inside the docker container
+```shell
 # add some color to your terminal
 source bin/color_my_terminal.sh
 
@@ -19,6 +23,9 @@ bin/configure_venv_locally.sh
 
 # run tests
 python -m unittest discover -s src/
+
+# start jupyter notebook
+jupyter notebook --ip 0.0.0.0 --no-browser --allow-root
 ```
 
 ### Exercises

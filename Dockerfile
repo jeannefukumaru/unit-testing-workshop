@@ -14,4 +14,6 @@ ARG user
 RUN useradd ${user:-root} -g root || true
 USER ${user:-root}
 
+EXPOSE 8888
+
 CMD ["bash"]
