@@ -10,6 +10,12 @@ docker build . -t unit-testing-workshop
 
 # start docker container
 docker run -it -v $(pwd):/code -p 8888:8888 unit-testing-workshop
+
+# get id of running container
+docker ps 
+
+# start another bash shell in the running container
+docker exec -it <container-id> bash
 ```
 
 Commands to be run inside the docker container
@@ -22,7 +28,10 @@ bin/configure_venv_locally.sh
 # Configure your IDE to know where the python interpreter is
 
 # run tests
-python -m unittest discover -s src/
+nosetests
+
+# run tests in watch mode
+nosetests --with-watch
 
 # start jupyter notebook
 jupyter notebook --ip 0.0.0.0 --no-browser --allow-root
