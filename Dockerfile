@@ -10,10 +10,6 @@ WORKDIR /code
 COPY requirements.txt /code/requirements.txt
 RUN pip install -r requirements.txt
 
-ARG user
-RUN useradd ${user:-root} -g root || true
-USER ${user:-root}
-
 EXPOSE 8888
 
 CMD ["bash"]

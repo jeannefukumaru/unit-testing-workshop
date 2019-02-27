@@ -1,46 +1,42 @@
 # Unit Testing Workshop
 
-
 ### Setup
 
 Build docker and start container
 ```shell
-# build docker image
+# 1. build docker image
 docker build . -t unit-testing-workshop
 
-# start docker container
+# 2. start docker container
 docker run -it -v $(pwd):/code -p 8888:8888 unit-testing-workshop
 
-# configure local venv on host. This is a workaround to give us intellisense and code completion when we write code
+# 3. open another terminal window and get id of running container
+docker ps 
+
+# 4. start another bash shell in the running container
+docker exec -it <container-id> bash
+
+# 5. Open yet another terminal window and run: 
 bin/configure_venv_locally.sh
-# After running the command, on your IDE, go and configure it to tell it that the python interpreter is in .venv-local/
+# After running the command, configure your IDE to tell it that the python interpreter is in .venv-local/
 # More instructions here: https://github.com/davified/ci-workshop-app/blob/master/docs/FAQs.md#ide-configuration
 ```
 
-Commands to be run inside the docker container
+### Commands to be run inside the docker container
+
 ```shell
-# add some color to your terminal
+# 1. add some color to your terminal
 source bin/color_my_terminal.sh
 
-# run tests
-nosetests
-
-# run tests in watch mode
+# For exercise 1: run tests in watch mode
 nosetests --with-watch
 
-# start jupyter notebook
+# For execise 2: in another docker terminal, start jupyter notebook
 jupyter notebook --ip 0.0.0.0 --no-browser --allow-root
+
+# To stop the notebook / nosetests: hit Ctrl + C
+# To exit the docker container    : hit Ctrl + D
 ```
-
-When you reach the point in the workshop where you need another start another bash shell in the running container, run the following commands on your host machine:
-```shell
-# get id of running container
-docker ps 
-
-# start another bash shell in the running container
-docker exec -it <container-id> bash
-```
-
 
 ### Exercises
 
