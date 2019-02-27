@@ -20,6 +20,8 @@ docker exec -it <container-id> bash
 bin/configure_venv_locally.sh
 # After the command completes, configure your IDE to tell it that the python interpreter is in .venv-local/
 # More instructions here: https://github.com/davified/ci-workshop-app/blob/master/docs/FAQs.md#ide-configuration
+
+# 6. Open unit-testing-workshop repo in your IDE
 ```
 
 ### Commands to be run inside the docker container
