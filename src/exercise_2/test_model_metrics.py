@@ -20,4 +20,4 @@ class TestModelMetrics(unittest.TestCase):
         y_true = labels_val
         r = recall_score(y_true, y_pred)
 
-        self.assertGreaterEqual(r, 0.7)
+        self.assertGreaterEqual(r, 0.5)
