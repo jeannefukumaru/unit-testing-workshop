@@ -50,16 +50,16 @@ Implement the following functions in `src/calculator.py`:
 
 ```python
 # subtract(a, b)
-subtract(2, 1) --> 1
+subtract(2, 1) -> 1
 
 # multiply(a, b)
-multiply(2, 3) --> 6
+multiply(2, 3) -> 6
 
 # divide(a, b)
-divide(10, 5) --> 2
+divide(10, 5) -> 2
 
 # bonus: handle rounding of floats to 2 precision points
-divide(10, 3) --> 3.33
+divide(10, 3) -> 3.33
 ```
 
 #### Exercise 2: Adding tests and refactoring a notebook
