@@ -14,5 +14,5 @@ class TestCalculator(unittest.TestCase):
         self.assertEqual(4, mult(2, 2))
 
 class TestCalculator(unittest.TestCase):
-    def test_5_and_1_should_return_1(self):
-        self.assertEqual(add(1, 1), 2)
+    def test_5_and_1_should_return_5(self):
+        self.assertEqual(5, divide(5, 1)
